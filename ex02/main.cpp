@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivarosic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/27 12:13:05 by ivarosic          #+#    #+#             */
-/*   Updated: 2021/05/12 09:48:09 by ivarosic         ###   ########lyon.fr   */
+/*   Created: 2021/05/12 10:11:08 by ivarosic          #+#    #+#             */
+/*   Updated: 2021/05/12 13:10:56 by ivarosic         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-# define PONY_HPP
+#include "Zombie.hpp"
+#include "ZombieEvent.hpp"
 
 #include <iostream>
 
-class	Pony {
+int main()
+{
+	ZombieEvent event;
 
-public:
-	Pony(std::string name);
-	~Pony(void);
-private:
-	std::string _name;
-};
+	Zombie *Zombie1 = new Zombie("octave", "advanced zombie");
+	delete Zombie1;
 
-#endif
+	event.setZombieType("medium zombie");
+	Zombie *Zombie2 = event.NewZombie("test");
+	delete Zombie2;
+
+
+}

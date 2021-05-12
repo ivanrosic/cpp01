@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivarosic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/27 12:13:05 by ivarosic          #+#    #+#             */
-/*   Updated: 2021/05/12 09:48:09 by ivarosic         ###   ########lyon.fr   */
+/*   Created: 2021/05/12 10:02:10 by ivarosic          #+#    #+#             */
+/*   Updated: 2021/05/12 11:45:10 by ivarosic         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_HPP
-# define PONY_HPP
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-#include <iostream>
+#include <string>
 
-class	Pony {
+class Zombie {
 
-public:
-	Pony(std::string name);
-	~Pony(void);
-private:
-	std::string _name;
+	public:
+		Zombie(std::string name, std::string type);
+		~Zombie();
+
+
+		std::string get_name() const;
+		std::string get_type() const;
+		void advert() const;
+
+	private:
+		std::string _name;
+		std::string _type;
 };
 
 #endif
