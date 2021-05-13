@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex04.cpp                                           :+:      :+:    :+:   */
+/*   Human.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivarosic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/13 11:25:22 by ivarosic          #+#    #+#             */
-/*   Updated: 2021/05/13 11:39:56 by ivarosic         ###   ########lyon.fr   */
+/*   Created: 2021/05/13 11:38:05 by ivarosic          #+#    #+#             */
+/*   Updated: 2021/05/13 12:04:45 by ivarosic         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
+#ifndef HUMAN_HPP
+# define HUMAN_HPP
 
-int main(void)
-{
- std::string str = "HI THIS IS BRAIN";
- std::string *ptrstr = &str;
- std::string &refstr = str;
- 
- std::cout << *ptrstr << std::endl;
- std::cout << refstr << std::endl;
-}
+class Human {
+
+	public :
+		Human();
+		~Human();
+
+	std::string identify();
+	const Brain getBrain();
+		
+
+	private:
+	const Brain _brain;
+		
+
+};
+
+#endif

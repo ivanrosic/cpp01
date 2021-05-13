@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ex04.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivarosic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/13 11:25:22 by ivarosic          #+#    #+#             */
-/*   Updated: 2021/05/13 11:39:56 by ivarosic         ###   ########lyon.fr   */
+/*   Created: 2021/05/13 11:54:04 by ivarosic          #+#    #+#             */
+/*   Updated: 2021/05/13 12:04:37 by ivarosic         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
+#include "Brain.hpp"
 
-int main(void)
-{
- std::string str = "HI THIS IS BRAIN";
- std::string *ptrstr = &str;
- std::string &refstr = str;
- 
- std::cout << *ptrstr << std::endl;
- std::cout << refstr << std::endl;
+Brain::Brain( void ) {}
+
+Brain::~Brain( void ) {}
+
+std::string identify( void ) const {
+
 }
