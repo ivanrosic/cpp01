@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivarosic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/12 10:11:08 by ivarosic          #+#    #+#             */
-/*   Updated: 2021/05/13 11:00:03 by ivarosic         ###   ########lyon.fr   */
+/*   Created: 2021/05/12 10:10:13 by ivarosic          #+#    #+#             */
+/*   Updated: 2021/05/12 11:45:30 by ivarosic         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include "ZombieEvent.hpp"
-
 #include <iostream>
+#include <string>
 
-int main()
+Zombie::Zombie(std::string name, std::string type): _name(name), _type(type)
 {
-	ZombieEvent event;
+	this->advert();
+}
 
-	Zombie *Zombie1 = new Zombie("octave", "advanced zombie");
-	delete Zombie1;
+void Zombie::advert( void ) const
+{
+	std::cout << "<" << this->_name << " (" << this->_type << ")> Braiiiiiiinnnssss ..." << std::endl;
+}
 
-	event.setZombieType("medium zombie");
-	Zombie *Zombie2 = event.NewZombie();
-	delete Zombie2;
+Zombie::~Zombie( void )
+{
+	std::cout << "zombie died" << std::endl;
+}
 
-	event.setZombieType("bad zombie");
-	Zombie *Zombie3 = event.NewZombie();
-	delete Zombie3;
+std::string Zombie::get_name( void ) const
+{
+	return this->_name;
+}
 
+std::string Zombie::get_type( void ) const
+{
+	return this->_type;
 }

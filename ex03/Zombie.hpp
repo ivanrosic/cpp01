@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivarosic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/12 10:11:08 by ivarosic          #+#    #+#             */
-/*   Updated: 2021/05/13 11:00:03 by ivarosic         ###   ########lyon.fr   */
+/*   Created: 2021/05/12 10:02:10 by ivarosic          #+#    #+#             */
+/*   Updated: 2021/05/12 11:45:10 by ivarosic         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include "ZombieEvent.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-#include <iostream>
+#include <string>
 
-int main()
-{
-	ZombieEvent event;
+class Zombie {
 
-	Zombie *Zombie1 = new Zombie("octave", "advanced zombie");
-	delete Zombie1;
+	public:
+		Zombie(std::string name, std::string type);
+		~Zombie();
 
-	event.setZombieType("medium zombie");
-	Zombie *Zombie2 = event.NewZombie();
-	delete Zombie2;
 
-	event.setZombieType("bad zombie");
-	Zombie *Zombie3 = event.NewZombie();
-	delete Zombie3;
+		std::string get_name() const;
+		std::string get_type() const;
+		void advert() const;
 
-}
+	private:
+		std::string _name;
+		std::string _type;
+};
+
+#endif
