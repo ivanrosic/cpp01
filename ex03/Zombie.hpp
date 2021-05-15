@@ -24,7 +24,7 @@ class Zombie {
 
 		std::string get_name() const;
 		std::string get_type() const;
-		void advert() const;
+		void announce() const;
 
 	private:
 		std::string _name;

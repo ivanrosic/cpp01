@@ -16,17 +16,16 @@
 
 Zombie::Zombie(std::string name, std::string type): _name(name), _type(type)
 {
-	this->advert();
+	this->announce();
 }
 
-void Zombie::advert( void ) const
+void Zombie::announce( void ) const
 {
 	std::cout << "<" << this->_name << " (" << this->_type << ")> Braiiiiiiinnnssss ..." << std::endl;
 }
 
 Zombie::~Zombie( void )
 {
-	std::cout << "zombie died" << std::endl;
 }
 
 std::string Zombie::get_name( void ) const
