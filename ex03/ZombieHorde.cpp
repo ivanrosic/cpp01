@@ -20,17 +20,20 @@ std::string ZombieHorde::_typelist[5] = {
 };
 
 
-ZombieHorde::ZombieHorde( int n )
+ZombieHorde::ZombieHorde( int n ) : _nbzombie(n)
 {
 	int i = 0;
+	int j;
+	int k;
 
-	this->_zombie = new Zombie[n];
+	this->_zombie_horde = new Zombie[n];
 	while(i < n)
 	{
-	this->_name = randomChump();
-	this->_type = randomType();
+	j = ((time(NULL) + rand()) / 2) % 5;
+	k = ((time(NULL) + rand()) / 3) % 5;
 
-		this->_zombie[i] = Zombie(this->_name, this->_type);
+		this->_zombie_horde[i].set_type(ZombieHorde::_typelist[j]);
+		this->_zombie_horde[i].set_name(ZombieHorde::_namelist[k]);
 		i++;
 	}
 	std::cout << "zombie horde created" << std::endl;
@@ -38,20 +41,16 @@ ZombieHorde::ZombieHorde( int n )
 
 ZombieHorde::~ZombieHorde( void )
 {
-	delete this->_zombie;
+	delete [] this->_zombie_horde;
 	std::cout << "zombie horde dead" << std::endl;
-};
-
-std::string ZombieHorde::randomType( void )
-{
-	int i = ((time(NULL) + rand())/2) % 5;
-	return this->_typelist[i];
 }
 
-
-std::string ZombieHorde::randomChump( void )
+void ZombieHorde::announce(void) const
 {
-	int i = (time(NULL) + rand()) % 5;
-	return this->_namelist[i];
+	int i = 0;
+	while(i < this->_nbzombie)
+	{
+		_zombie_horde[i].announce();
+		i++;
+	}
 }
-

@@ -6,7 +6,7 @@
 /*   By: ivarosic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 10:10:13 by ivarosic          #+#    #+#             */
-/*   Updated: 2021/05/12 11:45:30 by ivarosic         ###   ########lyon.fr   */
+/*   Updated: 2021/05/15 09:32:20 by ivarosic         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 #include <iostream>
 #include <string>
 
-Zombie::Zombie(std::string name, std::string type): _name(name), _type(type)
+Zombie::Zombie( void )
 {
-	this->announce();
 }
 
 void Zombie::announce( void ) const
@@ -26,6 +25,17 @@ void Zombie::announce( void ) const
 
 Zombie::~Zombie( void )
 {
+}
+
+void Zombie::set_name(std::string name)
+{
+	this->_name = name;
+}
+
+
+void Zombie::set_type(std::string type)
+{
+	this->_type = type;
 }
 
 std::string Zombie::get_name( void ) const

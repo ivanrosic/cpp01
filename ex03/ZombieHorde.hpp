@@ -11,13 +11,10 @@ class ZombieHorde
 		~ZombieHorde(void);
 
 		void announce(void) const;
-		std::string randomChump(void);
-		std::string randomType(void);
 
 	private:
-		Zombie *_zombie;
-		std::string _type;
-		std::string _name;
+		int _nbzombie;
+		Zombie *_zombie_horde;
 		static std::string _namelist[5];
 		static std::string _typelist[5];
 };

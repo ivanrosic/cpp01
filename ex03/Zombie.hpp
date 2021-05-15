@@ -6,7 +6,7 @@
 /*   By: ivarosic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 10:02:10 by ivarosic          #+#    #+#             */
-/*   Updated: 2021/05/12 11:45:10 by ivarosic         ###   ########lyon.fr   */
+/*   Updated: 2021/05/15 09:32:52 by ivarosic         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@
 class Zombie {
 
 	public:
-		Zombie(std::string name, std::string type);
+		Zombie();
 		~Zombie();
 
 
+		void set_name(std::string name);
+		void set_type(std::string type);
 		std::string get_name() const;
 		std::string get_type() const;
 		void announce() const;

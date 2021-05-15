@@ -6,7 +6,7 @@
 /*   By: ivarosic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 10:11:08 by ivarosic          #+#    #+#             */
-/*   Updated: 2021/05/13 11:00:03 by ivarosic         ###   ########lyon.fr   */
+/*   Updated: 2021/05/15 09:47:56 by ivarosic         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 int main()
 {
-	ZombieHorde horde = ZombieHorde(4);
+	ZombieHorde horde = ZombieHorde(20);
 
+	horde.announce();
 }
